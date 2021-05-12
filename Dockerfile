@@ -25,7 +25,7 @@ RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula \
     select true | debconf-set-selections
 RUN apt-get update \
     && apt-get install -y --no-install-recommends ttf-mscorefonts-installer gss-ntlmssp libc6-dev \
-     language-pack-ru gnupg1 libgdiplus \
+     libgif-dev libglib2.0-dev libcairo2-dev libtiff-dev libexif-dev language-pack-ru gnupg1 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* 
 COPY --from=builder /usr/local/lib/libgdiplus* /usr/lib/
